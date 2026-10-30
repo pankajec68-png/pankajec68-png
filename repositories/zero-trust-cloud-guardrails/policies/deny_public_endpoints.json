@@ -1,0 +1,45 @@
+{
+  "properties": {
+    "displayName": "Deny Public Network Access on Azure PaaS Resources",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Enforces Zero-Trust by blocking Storage Accounts, Key Vaults, and Azure SQL instances from having public network access enabled. Private Endpoints must be utilized.",
+    "metadata": {
+      "category": "Zero Trust Security",
+      "version": "1.0.0",
+      "architect": "Pankaj Singh"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Deny",
+          "Audit",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Storage/storageAccounts"
+          },
+          {
+            "field": "Microsoft.Storage/storageAccounts/publicNetworkAccess",
+            "notEquals": "Disabled"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    exclude:
+      - '*.md'
+      - 'docs/**'
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - name: TERRAFORM_VERSION
+    value: '1.7.5'
+  - name: AZURE_SERVICE_CONNECTION
+    value: 'sc-azure-landingzone-prod'
+
+stages:
+  # Stage 1: Validation, Linting & Security Gates
+  - stage: ValidationAndSecurity
+    displayName: '1. Lint, Secrets & Security Scan'
+    jobs:
+      - job: LintAndValidate
+        displayName: 'TFLint & Format Check'
+        steps:
+          - template: templates/validate-test.yml
+            parameters:
+              terraformVersion: $(TERRAFORM_VERSION)
+
+      - job: SecretAndVulnerabilityScan
+        displayName: 'TruffleHog & Checkov Scans'
+        steps:
+          - template: templates/security-scan.yml
+
+      - job: FinOpsCostEstimation
+        displayName: 'Infracost Budget Shift-Left'
+        steps:
+          - template: templates/infracost-check.yml
+
+  # Stage 2: Staged Deployment (Dev & UAT)
+  - stage: DeployNonProd
+    displayName: '2. Deploy Non-Prod (Dev/UAT)'
+    dependsOn: ValidationAndSecurity
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    jobs:
+      - deployment: DeployDev
+        displayName: 'Deploy Dev Environment'
+        environment: 'dev'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: templates/deploy-apply.yml
+                  parameters:
+                    environment: 'dev'
+                    serviceConnection: $(AZURE_SERVICE_CONNECTION)
+
+  # Stage 3: Production Deployment with Approval Gate
+  - stage: DeployProd
+    displayName: '3. Production Apply & Drift Lock'
+    dependsOn: DeployNonProd
+    jobs:
+      - deployment: DeployProduction
+        displayName: 'Production Gate & Apply'
+        environment: 'production' # Requires manual approval in Azure DevOps Environment
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: templates/deploy-apply.yml
+                  parameters:
+                    environment: 'prod'
+                    serviceConnection: $(AZURE_SERVICE_CONNECTION)
+            on:
+              failure:
+                steps:
+                  - template: templates/rollback.yml
+                    parameters:
+                      environment: 'prod'
