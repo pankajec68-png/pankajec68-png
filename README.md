@@ -503,11 +503,11 @@ Explore production-grade blueprints and code samples reflecting enterprise best 
 
 | Repository / Blueprint | Description | Core Stack |
 | :--- | :--- | :--- |
-| 🏗️ [**azure-caf-enterprise-landingzone**](#) | Modular Terraform codebase implementing Management Groups, Hub-Spoke, and Azure Policy Initiatives. | `Terraform` `Azure CAF` `Bicep` |
-| 🚀 [**devsecops-pipeline-accelerator**](#) | Reusable Azure DevOps YAML templates featuring TFLint, TruffleHog, Infracost, and rollback logic. | `Azure DevOps` `YAML` `Bash` |
-| 🔄 [**cloud-migration-factory-toolkit**](#) | End-to-end framework for 100+ workload migrations: discovery scripts, pre/post checklists, and RACI. | `PowerShell` `Python` `Azure Migrate` |
-| 💰 [**azure-finops-cost-governor**](#) | Automation runbooks for unattached disk harvesting, auto start/stop schedules, and log optimization. | `PowerShell` `Azure Runbooks` `FinOps` |
-| 🛡️ [**zero-trust-cloud-guardrails**](#) | Production Azure Policy custom definitions, Entra ID PIM workflows, and Defender compliance benchmarks. | `Azure Policy` `Entra ID` `JSON` |
+| 🏗️ [**azure-caf-enterprise-landingzone**](https://github.com/pankajec68-png/azure-caf-enterprise-landingzone) | Modular Terraform codebase implementing Management Groups, Hub-Spoke, and Azure Policy Initiatives. | `Terraform` `Azure CAF` `Bicep` |
+| 🚀 [**devsecops-pipeline-accelerator**](https://github.com/pankajec68-png/devsecops-pipeline-accelerator) | Reusable Azure DevOps YAML templates featuring TFLint, TruffleHog, Infracost, and rollback logic. | `Azure DevOps` `YAML` `Bash` |
+| 🔄 [**cloud-migration-factory-toolkit**](https://github.com/pankajec68-png/cloud-migration-factory-toolkit) | End-to-end framework for 100+ workload migrations: discovery scripts, pre/post checklists, and RACI. | `PowerShell` `Python` `Azure Migrate` |
+| 💰 [**azure-finops-cost-governor**](https://github.com/pankajec68-png/azure-finops-cost-governor) | Automation runbooks for unattached disk harvesting, auto start/stop schedules, and log optimization. | `PowerShell` `Azure Runbooks` `FinOps` |
+| 🛡️ [**zero-trust-cloud-guardrails**](https://github.com/pankajec68-png/zero-trust-cloud-guardrails) | Production Azure Policy custom definitions, Entra ID PIM workflows, and Defender compliance benchmarks. | `Azure Policy` `Entra ID` `JSON` |
 
 ---
 
