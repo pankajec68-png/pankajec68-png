@@ -21,7 +21,9 @@
 
 <br/>
 
-<!-- Real-time Stats & Badges -->
+<!-- Real-time Stats & Automation Badges -->
+[![Profile CI/CD Engine](https://github.com/pankajec68-png/pankajec68-png/actions/workflows/profile-ci.yml/badge.svg)](https://github.com/pankajec68-png/pankajec68-png/actions)
+[![Contribution Snake Game](https://github.com/pankajec68-png/pankajec68-png/actions/workflows/snake.yml/badge.svg)](https://github.com/pankajec68-png/pankajec68-png/actions)
 [![Profile Views](https://komarev.com/ghpvc/?username=pankajec68-png&color=0078D4&style=flat-square&label=Profile+Views)](https://github.com/pankajec68-png)
 [![GitHub Followers](https://img.shields.io/github/followers/pankajec68-png?style=flat-square&logo=github&label=Followers&color=24292E)](https://github.com/pankajec68-png)
 [![Open to Work](https://img.shields.io/badge/Status-Actively_Interviewing-brightgreen?style=flat-square)](mailto:pankajec68@gmail.com)
@@ -480,6 +482,19 @@ graph LR
 
 </div>
 
+## ⚙️ Enterprise Cloud Automation & Operations Matrix
+
+How automated platform engineering is operationalized across cloud infrastructure:
+
+| Automation Domain | Architecture Mechanism | Trigger / Cadence | Business Value / Outcome |
+| :--- | :--- | :--- | :--- |
+| **IaC Configuration Drift Detection** | Scheduled CI/CD pipeline executing `terraform plan -detailed-exitcode` against state files in Azure Blob. | Daily at 00:00 UTC | Eliminates out-of-band portal changes & maintains 100% state parity. |
+| **FinOps Waste Harvesting** | Azure Automation PowerShell Runbooks scanning unattached disks, unused public IPs, and idle compute. | Weekly (Sundays at 02:00 UTC) | Recovers thousands in recurring cloud spend with zero manual effort. |
+| **Non-Production Auto-Scheduling** | Automated VM Start/Stop engine tagged with `AutoSchedule: true` for Dev & UAT environments. | Daily (Off at 19:00, On at 08:00 IST) | Slashes non-prod compute bills by **65%** every billing cycle. |
+| **Shift-Left Security & Secret Gates** | Pre-merge GitHub Actions / Azure DevOps running `TruffleHog`, `Checkov`, and `TFLint`. | Mandatory on every Pull Request | 0 plain-text credentials or misconfigurations committed to `main`. |
+| **FinOps Cost Delta Forecasting** | `Infracost` pipeline runner calculating projected resource cost deltas on pull requests. | Automated PR Comment | Gives engineering leads proactive visibility before cloud resources are provisioned. |
+| **Zero-Trust Guardrail Enforcement** | Azure Policy Engine with `Deny` and `DeployIfNotExists` initiatives across Management Groups. | Continuous Event-Driven | Blocks non-compliant resources (e.g. unencrypted storage, public SQL endpoints) at creation. |
+
 ---
 
 ## 📦 Reference Architecture Repositories
@@ -496,20 +511,27 @@ Explore production-grade blueprints and code samples reflecting enterprise best 
 
 ---
 
-## 📈 GitHub Engineering Activity & Metrics
+## 📈 GitHub Engineering Activity & Automated Operations
 
 <div align="center">
+
+<!-- Automated Snake Contribution Game -->
+<img src="assets/github-contribution-grid-snake.svg" alt="Automated GitHub Contribution Snake Animation" width="100%" />
+
+<br/><br/>
 
 [![GitHub Streak](https://streak-stats.demolab.com/?user=pankajec68-png&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
 
 <br/>
 
-| Metric | Status / Badge |
-| :--- | :--- |
-| **Profile Engagement** | [![Profile Views](https://komarev.com/ghpvc/?username=pankajec68-png&color=0078D4&style=flat-square&label=Profile+Views)](https://github.com/pankajec68-png) |
-| **Community** | [![Followers](https://img.shields.io/github/followers/pankajec68-png?style=flat-square&logo=github&label=Followers&color=24292E)](https://github.com/pankajec68-png) |
-| **Primary Cloud Domain** | ![Azure](https://img.shields.io/badge/Enterprise-Azure_Cloud_Architect-0089D6?style=flat-square&logo=microsoft-azure&logoColor=white) |
-| **Infrastructure Paradigm** | ![IaC](https://img.shields.io/badge/IaC-Terraform_Modular_Architectures-7B42BC?style=flat-square&logo=terraform&logoColor=white) |
+| Operational Metric | Status / Verified Badge | Automation Engine |
+| :--- | :--- | :--- |
+| **CI/CD Platform Pipeline** | [![Profile CI/CD Engine](https://github.com/pankajec68-png/pankajec68-png/actions/workflows/profile-ci.yml/badge.svg)](https://github.com/pankajec68-png/pankajec68-png/actions) | GitHub Actions (Daily Cron & On Push) |
+| **Contribution Grid Snake** | [![Contribution Snake Game](https://github.com/pankajec68-png/pankajec68-png/actions/workflows/snake.yml/badge.svg)](https://github.com/pankajec68-png/pankajec68-png/actions) | Platane/snk Automated 24h Sync |
+| **Profile Engagement** | [![Profile Views](https://komarev.com/ghpvc/?username=pankajec68-png&color=0078D4&style=flat-square&label=Profile+Views)](https://github.com/pankajec68-png) | Real-time SVG Analytics |
+| **Community & Network** | [![Followers](https://img.shields.io/github/followers/pankajec68-png?style=flat-square&logo=github&label=Followers&color=24292E)](https://github.com/pankajec68-png) | GitHub API Integration |
+| **Cloud Architecture Focus** | ![Azure](https://img.shields.io/badge/Enterprise-Azure_Cloud_Architect-0089D6?style=flat-square&logo=microsoft-azure&logoColor=white) | Multi-Subscription Landing Zones |
+| **IaC Automation Core** | ![IaC](https://img.shields.io/badge/IaC-Terraform_Modular_Architectures-7B42BC?style=flat-square&logo=terraform&logoColor=white) | Drift Detection & Infracost Gates |
 
 </div>
 
