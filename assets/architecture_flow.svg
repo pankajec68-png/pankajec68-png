@@ -1,0 +1,253 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 320" width="100%" height="320">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+
+    <!-- Box Gradients -->
+    <linearGradient id="onpremGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="hubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e"/>
+      <stop offset="100%" stop-color="#082f49"/>
+    </linearGradient>
+
+    <linearGradient id="spokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+
+    <linearGradient id="wireGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <filter id="glowPacket" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <pattern id="diagGrid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="rgba(56, 189, 248, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes movePacket1 {
+      0% { transform: translateX(0px); opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { transform: translateX(110px); opacity: 0; }
+    }
+    @keyframes movePacket2 {
+      0% { transform: translateX(0px); opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { transform: translateX(110px); opacity: 0; }
+    }
+    @keyframes pulseCard {
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.3)); }
+      50% { filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.7)); }
+    }
+    @keyframes pingDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+    .flow-wire {
+      stroke-dasharray: 6 6;
+      stroke-dashoffset: 0;
+      animation: dashAnim 1.5s linear infinite;
+    }
+    @keyframes dashAnim {
+      to { stroke-dashoffset: -24; }
+    }
+    .packet-a {
+      animation: movePacket1 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .packet-b {
+      animation: movePacket2 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite 1.1s;
+    }
+    .hub-box {
+      animation: pulseCard 4s ease-in-out infinite;
+    }
+    .ping-circle {
+      animation: pingDot 2s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .txt-head {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 800;
+    }
+    .txt-body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 500;
+    }
+  </style>
+
+  <!-- Container Box -->
+  <rect width="950" height="320" rx="18" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect width="950" height="320" rx="18" fill="url(#diagGrid)"/>
+
+  <!-- Title Bar -->
+  <g transform="translate(30, 24)">
+    <circle cx="8" cy="8" r="4.5" fill="#10b981" class="ping-circle"/>
+    <text x="22" y="12" fill="#38bdf8" font-size="12" class="txt-head" letter-spacing="1">
+      LIVE ARCHITECTURE BLUEPRINT: 100+ WORKLOAD ENTERPRISE MIGRATION &amp; HUB-AND-SPOKE TOPOLOGY
+    </text>
+  </g>
+
+  <!-- ==================== BOX 1: ON-PREMISES (LEFT) ==================== -->
+  <g transform="translate(30, 55)">
+    <rect width="240" height="235" rx="14" fill="url(#onpremGrad)" stroke="#334155" stroke-width="1.5"/>
+    <!-- Header -->
+    <rect width="240" height="36" rx="14" fill="#1e293b"/>
+    <rect y="22" width="240" height="14" fill="#1e293b"/>
+    <text x="16" y="24" fill="#f8fafc" font-size="13" class="txt-head">🏢 On-Premises Datacenter</text>
+    <circle cx="218" cy="18" r="4" fill="#94a3b8"/>
+
+    <!-- Workloads Content -->
+    <g transform="translate(14, 48)">
+      <!-- Item 1 -->
+      <rect width="212" height="36" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="10" y="16" fill="#e2e8f0" font-size="11" class="txt-head">📦 100+ Multi-Tier Apps</text>
+      <text x="10" y="29" fill="#94a3b8" font-size="9.5" class="txt-body">Databases, Middleware &amp; Web Services</text>
+
+      <!-- Item 2 -->
+      <g transform="translate(0, 42)">
+        <rect width="212" height="36" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="16" fill="#38bdf8" font-size="11" class="txt-head">🌐 CIDR Assessment &amp; IPAM</text>
+        <text x="10" y="29" fill="#94a3b8" font-size="9.5" class="txt-body">Subnet discovery &amp; Overlap prevention</text>
+      </g>
+
+      <!-- Item 3 -->
+      <g transform="translate(0, 84)">
+        <rect width="212" height="36" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="16" fill="#fbbf24" font-size="11" class="txt-head">🔄 6-R Strategy Matrix</text>
+        <text x="10" y="29" fill="#94a3b8" font-size="9.5" class="txt-body">Rehost • Replatform • Refactor • Retire</text>
+      </g>
+
+      <!-- Item 4 -->
+      <g transform="translate(0, 126)">
+        <rect width="212" height="42" rx="6" fill="#0c4a6e" fill-opacity="0.25" stroke="#0284c7" stroke-width="1"/>
+        <text x="10" y="17" fill="#7dd3fc" font-size="10.5" class="txt-head">📋 Migration Engine Factory</text>
+        <text x="10" y="31" fill="#bae6fd" font-size="9" class="txt-body">Pre-check ➔ Cutover ➔ 24/7 Hypercare</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== CONNECTION 1: ON-PREM TO HUB ==================== -->
+  <g transform="translate(270, 150)">
+    <!-- Main Conduit -->
+    <path d="M 0 20 L 110 20" stroke="#0284c7" stroke-width="3" fill="none" class="flow-wire"/>
+    <text x="8" y="12" fill="#38bdf8" font-size="9" class="txt-head">ExpressRoute / VPN</text>
+    
+    <!-- Animated Traveling Packets -->
+    <g class="packet-a">
+      <circle cx="0" cy="20" r="5" fill="#38bdf8" filter="url(#glowPacket)"/>
+    </g>
+    <g class="packet-b">
+      <circle cx="0" cy="20" r="4" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- ==================== BOX 2: AZURE HUB VNET & CAF (CENTER) ==================== -->
+  <g transform="translate(380, 55)" class="hub-box">
+    <rect width="260" height="235" rx="14" fill="url(#hubGrad)" stroke="#0284c7" stroke-width="1.8"/>
+    <!-- Header -->
+    <rect width="260" height="36" rx="14" fill="#0369a1"/>
+    <rect y="22" width="260" height="14" fill="#0369a1"/>
+    <text x="16" y="24" fill="#ffffff" font-size="13" class="txt-head">☁️ Azure Hub VNet &amp; Platform</text>
+    <circle cx="236" cy="18" r="4" fill="#38bdf8" class="ping-circle"/>
+
+    <!-- Content Inside Hub -->
+    <g transform="translate(14, 48)">
+      <!-- Hub Item 1 -->
+      <rect width="232" height="36" rx="6" fill="#082f49" stroke="#0284c7" stroke-width="1"/>
+      <text x="10" y="16" fill="#f0f9ff" font-size="11" class="txt-head">🛡️ Azure Firewall &amp; UDR 0.0.0.0/0</text>
+      <text x="10" y="29" fill="#7dd3fc" font-size="9.5" class="txt-body">Centralized Inspection &amp; Controlled Egress</text>
+
+      <!-- Hub Item 2 -->
+      <g transform="translate(0, 42)">
+        <rect width="232" height="36" rx="6" fill="#082f49" stroke="#0284c7" stroke-width="1"/>
+        <text x="10" y="16" fill="#c084fc" font-size="11" class="txt-head">🏢 Entra ID &amp; Management Groups</text>
+        <text x="10" y="29" fill="#d8b4fe" font-size="9.5" class="txt-body">Root ➔ Platform, Workloads, Sandbox, Decomm</text>
+      </g>
+
+      <!-- Hub Item 3 -->
+      <g transform="translate(0, 84)">
+        <rect width="232" height="36" rx="6" fill="#082f49" stroke="#0284c7" stroke-width="1"/>
+        <text x="10" y="16" fill="#34d399" font-size="11" class="txt-head">🔑 Entra PIM &amp; Azure Policy Guardrails</text>
+        <text x="10" y="29" fill="#86efac" font-size="9.5" class="txt-body">Zero Trust, Least Privilege &amp; Just-In-Time</text>
+      </g>
+
+      <!-- Hub Item 4 -->
+      <g transform="translate(0, 126)">
+        <rect width="232" height="42" rx="6" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1"/>
+        <text x="10" y="17" fill="#ffffff" font-size="10.5" class="txt-head">🌐 Private DNS &amp; Gateway Transit</text>
+        <text x="10" y="31" fill="#bae6fd" font-size="9" class="txt-body">privatelink.azure.com resolution across VNets</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== CONNECTION 2: HUB TO SPOKES ==================== -->
+  <g transform="translate(640, 150)">
+    <!-- Main Conduit -->
+    <path d="M 0 20 L 110 20" stroke="#059669" stroke-width="3" fill="none" class="flow-wire"/>
+    <text x="10" y="12" fill="#34d399" font-size="9" class="txt-head">VNet Peering</text>
+
+    <!-- Animated Traveling Packets -->
+    <g class="packet-a">
+      <circle cx="0" cy="20" r="5" fill="#34d399" filter="url(#glowPacket)"/>
+    </g>
+    <g class="packet-b">
+      <circle cx="0" cy="20" r="4" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- ==================== BOX 3: SPOKE WORKLOADS (RIGHT) ==================== -->
+  <g transform="translate(750, 55)">
+    <rect width="170" height="235" rx="14" fill="url(#spokeGrad)" stroke="#059669" stroke-width="1.5"/>
+    <!-- Header -->
+    <rect width="170" height="36" rx="14" fill="#047857"/>
+    <rect y="22" width="170" height="14" fill="#047857"/>
+    <text x="14" y="24" fill="#ffffff" font-size="13" class="txt-head">🚀 Spoke Workloads</text>
+    <circle cx="152" cy="18" r="4" fill="#4ade80"/>
+
+    <!-- Content Spoke -->
+    <g transform="translate(10, 48)">
+      <!-- Tier Dev -->
+      <rect width="150" height="32" rx="6" fill="#022c22" stroke="#059669" stroke-width="1"/>
+      <text x="8" y="15" fill="#86efac" font-size="10" class="txt-head">🔹 Dev Environment</text>
+      <text x="8" y="26" fill="#a7f3d0" font-size="8.5" class="txt-body">Auto Start/Stop (65% off)</text>
+
+      <!-- Tier UAT -->
+      <g transform="translate(0, 38)">
+        <rect width="150" height="32" rx="6" fill="#022c22" stroke="#059669" stroke-width="1"/>
+        <text x="8" y="15" fill="#86efac" font-size="10" class="txt-head">🔹 UAT Staging Tier</text>
+        <text x="8" y="26" fill="#a7f3d0" font-size="8.5" class="txt-body">Parity Testing &amp; Approval Gates</text>
+      </g>
+
+      <!-- Tier Prod -->
+      <g transform="translate(0, 76)">
+        <rect width="150" height="36" rx="6" fill="#065f46" stroke="#10b981" stroke-width="1.2"/>
+        <text x="8" y="15" fill="#ffffff" font-size="10.5" class="txt-head">⭐ Production Tier</text>
+        <text x="8" y="28" fill="#d1fae5" font-size="8.5" class="txt-body">VMSS • Zone Redundant • SLA 99.99%</text>
+      </g>
+
+      <!-- BCDR / PE -->
+      <g transform="translate(0, 118)">
+        <rect width="150" height="48" rx="6" fill="#022c22" stroke="#047857" stroke-width="1"/>
+        <text x="8" y="14" fill="#38bdf8" font-size="9.5" class="txt-head">🔒 Private Endpoints</text>
+        <text x="8" y="27" fill="#93c5fd" font-size="8.5" class="txt-body">Azure SQL • Blob • KeyVault</text>
+        <text x="8" y="40" fill="#facc15" font-size="8.5" class="txt-body">BCDR: GRS &amp; ASR DR Paired</text>
+      </g>
+    </g>
+  </g>
+</svg>

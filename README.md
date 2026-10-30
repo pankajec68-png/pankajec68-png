@@ -1,11 +1,9 @@
 <div align="center">
 
-<!-- Animated Header Banner -->
-# ☁️ Pankaj Singh
-### **Enterprise Cloud Architect | Principal DevSecOps & Cloud Migration Lead**
-#### *Transforming Enterprise IT with Resilient, Secure, and Cost-Optimized Cloud Platforms*
+<!-- Futuristic Animated Hero SVG Banner -->
+<img src="assets/hero_banner.svg" alt="Pankaj Singh - Enterprise Cloud Architect" width="100%" />
 
-<br/>
+<br/><br/>
 
 <!-- Dynamic Animated Typing SVG -->
 <a href="https://github.com/pankajec68-png">
@@ -144,6 +142,12 @@ A rare combination of **commercial acumen, stakeholder management, and deep hand
 > **Context**: Migration and modernization of **100+ business applications** across **Dev, UAT, and Production** environments from legacy on-premises datacenters to a multi-subscription Microsoft Azure ecosystem.
 
 ### 🏛️ Architecture Blueprint: Cloud Adoption Framework & Tenant Hierarchy
+
+<div align="center">
+  <img src="assets/architecture_flow.svg" alt="Live Animated Architecture Flow: 100+ Workloads Migration" width="100%" />
+</div>
+
+<br/>
 
 ```mermaid
 graph TD
@@ -351,6 +355,12 @@ graph LR
 
 <details open>
 <summary><h3>5. 🚀 Azure DevOps & DevSecOps Engineering</h3></summary>
+
+<div align="center">
+  <img src="assets/devsecops_pipeline.svg" alt="Live Animated DevSecOps Pipeline Flow" width="100%" />
+</div>
+
+<br/>
 
 ```mermaid
 graph LR
